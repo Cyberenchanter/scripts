@@ -1,4 +1,8 @@
-let obj = JSON.parse($response.body);
-obj.subscription.type = "ACTIVE";
-obj.subscription.store = "APP_STORE";
-$done({body: JSON.stringify(obj)});
+let body = JSON.parse($response.body)
+if (body.subscription) {
+    body.subscription.type = "ACTIVE"
+    body.subscription.store = "APP_STORE"
+    $done({body:JSON.stringify(body)})
+} else {
+    $done({})
+}
