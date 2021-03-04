@@ -1,0 +1,6 @@
+#!name=Amytelecom_emby
+#!desc=Manually configure emby rules for Amytelecom (Not Crack!)
+
+[Rule]
+# > Emby
+DOMAIN-SUFFIX,emby.nexitally.com,美国 14 [Emby] [0.3x]
