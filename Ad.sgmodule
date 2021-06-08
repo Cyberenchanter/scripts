@@ -1,0 +1,6 @@
+#!name=Ad
+#!desc=Ad removal
+[Rule]
+RULE-SET,https://raw.githubusercontent.com/NobyDa/Script/master/Surge/AdRule.list,REJECT
+DOMAIN-KEYWORD,toutiao,REJECT
+DOMAIN-KEYWORD,114dev,REJECT
