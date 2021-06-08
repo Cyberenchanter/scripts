@@ -1,0 +1,4 @@
+#!name=SSH Local
+#!desc=Direct SSH traffic(Dst-Port)
+[Rule]
+DEST-PORT,22,Direct
