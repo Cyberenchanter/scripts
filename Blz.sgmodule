@@ -1,0 +1,6 @@
+#!name=Blizzard Override
+#!desc= Override Battle net
+
+[Rule]
+DOMAIN-SUFFIX,battle.net,immtel
+DOMAIN-SUFFIX,blizzard.com,immtel
