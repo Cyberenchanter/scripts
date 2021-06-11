@@ -1,5 +1,5 @@
 #!name=10010
-#!desc=Auto checkin 
+#!desc=Auto checkin
 [MITM]
 hostname = %APPEND% act.10010.com, m.client.10010.com
 
