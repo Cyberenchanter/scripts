@@ -2,5 +2,4 @@
 #!desc= Override Battle net
 
 [Rule]
-DOMAIN-SUFFIX,battle.net,immtel
-DOMAIN-SUFFIX,blizzard.com,immtel
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Blizzard/Blizzard.list,immtel
