@@ -1,4 +1,4 @@
-let body = JSON.parse($response)
+let body = JSON.parse($response.body)
 if (body.subscriber) {
     body.subscriber.entitlements = {
         "premium": {
