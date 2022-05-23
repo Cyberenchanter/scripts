@@ -1,0 +1,8 @@
+#!name=Grammarly Unlock
+#!desc=Unlock Grammarly
+
+[Script]
+grammarly.js = requires-body=1,script-path=https://raw.githubusercontent.com/cpphut/scripts/main/js/grammarly.js,type=http-response,pattern= ^https:\/\/subscription\.grammarly\.com\/api\/v1\/subscription
+
+[MITM]
+hostname = %APPEND% subscription.grammarly.com
