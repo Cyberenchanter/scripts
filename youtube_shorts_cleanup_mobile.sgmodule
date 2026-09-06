@@ -8,10 +8,10 @@
 ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|search) header-replace accept-encoding identity
 
 [Script]
-# binary-body-mode is what makes $response.bodyBytes available. Without it the
-# body arrives as a string and the protobuf is already corrupted.
-youtube-mobile-browse-cleanup = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse(?:[?#]|$),requires-body=true,binary-body-mode=true,max-size=0,script-path=https://raw.githubusercontent.com/cyberenchanter/surge-scripts/main/js/youtube_shorts_cleanup_mobile.js
-youtube-mobile-search-cleanup = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/search(?:[?#]|$),requires-body=true,binary-body-mode=true,max-size=0,script-path=https://raw.githubusercontent.com/cyberenchanter/surge-scripts/main/js/youtube_shorts_cleanup_mobile.js
+# binary-body-mode makes $response.body a Uint8Array. Without it the body is
+# decoded as UTF-8 text and the protobuf is corrupted.
+youtube-mobile-browse-cleanup = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse(?:[?#]|$),requires-body=true,binary-body-mode=true,max-size=-1,script-path=https://raw.githubusercontent.com/cyberenchanter/surge-scripts/main/js/youtube_shorts_cleanup_mobile.js
+youtube-mobile-search-cleanup = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/search(?:[?#]|$),requires-body=true,binary-body-mode=true,max-size=-1,script-path=https://raw.githubusercontent.com/cyberenchanter/surge-scripts/main/js/youtube_shorts_cleanup_mobile.js
 
 [MITM]
 hostname = %APPEND% youtubei.googleapis.com

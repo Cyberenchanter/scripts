@@ -25,10 +25,10 @@
   // on a Shorts carousel that ships as a plain horizontal shelf.
   var SHORTS_OVERLAY = "SHORTS";
 
-  var bytes = $response.bodyBytes;
+  var bytes = $response.body;
 
-  // Needs binary-body-mode=true on the script line; without it Surge hands over
-  // a string and the payload is already mangled.
+  // Needs binary-body-mode=true on the script line; this makes Surge expose
+  // $response.body as a Uint8Array instead of decoding it as UTF-8 text.
   if (!bytes || typeof bytes.length !== "number" || !bytes.length) {
     $done({});
     return;
@@ -372,5 +372,5 @@
     rebuilt = concat([head, key, length, rebuilt, tail], total);
   }
 
-  $done({ bodyBytes: rebuilt });
+  $done({ body: rebuilt });
 })();
